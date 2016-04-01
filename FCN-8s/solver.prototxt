@@ -1,0 +1,19 @@
+net: "/home/pierre/tmpModels/caffeFcn/fcn-8s-pascal/train_val.prototxt"
+test_iter: 2913
+# make test net, but don't invoke it from the solver itself
+test_interval: 10000
+display: 20
+average_loss: 20
+lr_policy: "fixed"
+# lr for unnormalized softmax -- see train_val definition
+base_lr: 1e-14
+# high momentum
+momentum: 0.99
+# no gradient accumulation
+iter_size: 1
+max_iter: 100001
+weight_decay: 0.0005
+snapshot: 1000
+snapshot_prefix: "train"
+test_initialization: false
+solver_mode: GPU
